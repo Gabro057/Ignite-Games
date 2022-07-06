@@ -1,10 +1,14 @@
 # Ignite Games
 
-React, Redux, Router, Styled components, Framer motion
+React, Redux, Redux-thunk, Router, Styled components, Framer motion
 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Using RAWG Video Games DB API
+
+rawg.io
 
 ## Available Scripts
 
