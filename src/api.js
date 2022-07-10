@@ -25,5 +25,9 @@ let nextYear = `${year+1}-${month}-${day}`
 
 // Popular games
 const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+const upcoming_games = `games?dates=${year},${nextYear}&ordering=-added&page_size=10`
+const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`
 
 export const popularGamesURL = () => `${base_url}${popular_games}&${key}`
+export const upcomingGamesURL = () => `${base_url}${upcoming_games}&${key}`
+export const newGamesURL = () => `${base_url}${new_games}&${key}`
