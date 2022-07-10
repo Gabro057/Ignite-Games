@@ -1,6 +1,6 @@
 # Ignite Games
 
-React, Redux, Redux-thunk, Router, Styled components, Framer motion
+React, Redux, Redux-thunk, Router, Styled components, Framer motion, Axios
 
 # Getting Started with Create React App
 

@@ -7,20 +7,19 @@ const initState = {
 const gamesReducers = (state=initState, action) => {
   switch(action.type){
     case "FETCH_GAMES":
-      return {...state} //return {...state, ..action.payload}
+      return { ...state, popular: action.payload.popular } //return {...state, ..action.payload}
     default:
-      return {...state}
+      return { ...state }
   }
 }
 
-//ACTION
-/*const fetchGames = userData => {
+/*
+const fetchGames = userData => {
   return {
     type: "FETCH_GAMES",
     payload: userData
   }
-}*/
-
-
+}
+*/
 
 export default gamesReducers
