@@ -5,6 +5,9 @@ export const loadDetail = id => async (dispatch) => {
   const detailData = await axios.get(gameDetailsURL(id))
   const screenShotData = await axios.get(gameScreenshotURL(id))
 
+  console.info("detailData", detailData)
+  console.info("screenShotData", screenShotData)
+
   dispatch({
     type: "GET_DETAIL",
     payload: {
@@ -13,4 +16,3 @@ export const loadDetail = id => async (dispatch) => {
     }
   })
 }
-

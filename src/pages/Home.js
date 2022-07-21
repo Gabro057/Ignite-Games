@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import GameDetail from '../components/GameDetail';
+
 import { useDispatch, useSelector } from 'react-redux'
 import { loadGames } from '../actions/gamesAction'
 // Components
@@ -7,9 +9,16 @@ import Game from '../components/Game';
 import styled from 'styled-components'
 //import { motion } from "framer-motion"
 import { motion } from 'framer-motion/dist/framer-motion'
-
+//import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { useLocation } from 'react-router-dom'
 
 const Home = () => {
+  //get the current location
+  const location = useLocation()
+  const pathId = location.pathname.split("/")[2]
+
+  console.info("location", location)
+  console.info("pathId", pathId)
   //FETCH GAMES
   const dispatch = useDispatch();
 
@@ -20,9 +29,11 @@ const Home = () => {
   // Get that data back
   const { popular, newGames, upcoming } = useSelector(state => state.games)
   // popular.map(game => )
-
+  
   return (
-    <GameList>
+    <GameList>      
+      {/*<GameDetail/>*/}
+      { pathId && <GameDetail /> }
       <h2>Upcoming games</h2>
       <Games>
         { upcoming.map(game => (
