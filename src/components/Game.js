@@ -1,4 +1,5 @@
 import React from 'react'
+import { smallImage } from '../util'
 // Styling and animation
 import styled from 'styled-components'
 import { motion } from 'framer-motion/dist/framer-motion'
@@ -8,17 +9,20 @@ import { loadDetail } from '../actions/detailAction'
 import { Link } from 'react-router-dom'
 
 const Game = ({ name, id, released, image }) => {
+  const stringPathId = id.toString()
+  console.info("stringPathId", stringPathId)
   const dispatch = useDispatch()
   const loadDetailHandler = () => {
+    document.body.style.overflow = 'hidden' // potlaceni posuvniku na hlavni strance
     dispatch(loadDetail(id))
   }
 
   return (
-    <StyledGame id={id} onClick={loadDetailHandler}>
+    <StyledGame layoutId={stringPathId} onClick={loadDetailHandler}>
       <Link to={`/game/${id}`}>
-        <h3>{name}</h3>
+        <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
         <p>{released}</p>
-        <img src={image} alt={name}/>
+        <motion.img layoutId={`image ${stringPathId}`} src={smallImage(image, 640)} alt={name}/>
       </Link>
     </StyledGame>
   )
