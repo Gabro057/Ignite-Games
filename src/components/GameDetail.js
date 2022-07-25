@@ -85,11 +85,11 @@ const GameDetail = ({ pathId }) => {
 				<Description>
 					<p>{ game.description_raw }</p>
 				</Description>
-				<Gallery>
+				<div>
 					{ screen.results && screen.results.map(screen => (
 						<img src={smallImage(screen.image, 1280)} key={screen.id} alt="{screen.image}" />
 					))}
-				</Gallery>
+				</div>
 			</Detail> 
 		</CardShadow>
 		)}
@@ -170,10 +170,6 @@ const Media = styled(motion.div)`
 
 const Description = styled(motion.div)`
 	margin: 5rem 0rem;
-`
-
-const Gallery = styled(motion.div)`
-	
 `
 
 export default GameDetail
